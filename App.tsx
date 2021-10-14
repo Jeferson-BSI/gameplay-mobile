@@ -9,7 +9,8 @@ import {
 } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
 
-import { SingIn } from './src/screens/SignIn';
+import { Background } from './src/components/Background';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,9 +25,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <Background>
       <StatusBar style="light" backgroundColor="transparent" translucent />
-      <SingIn />
-    </>
+      <Routes />
+    </Background>
   );
 }

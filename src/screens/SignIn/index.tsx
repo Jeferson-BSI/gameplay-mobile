@@ -1,21 +1,27 @@
 import React from 'react';
-import { Container, BackgroundImg, Content, Title } from './styles';
+import { Container, BackgroundImg, Content, Title, SubTitle } from './styles';
 import IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from '../../components/ButtonIcon';
+import { useNavigation } from '@react-navigation/native';
 
 export const SingIn = () => {
+  const navigation = useNavigation();
+
+  function handleSignIn() {
+    navigation.navigate('Home' as never);
+  }
   return (
     <Container>
       <BackgroundImg resizeMethod="resize" source={IllustrationImg} />
 
       <Content>
-        <Title size={40} margin={16}>
+        <Title>
           Conecte-se e organize{'\n'} suas jogatinas {'\n'}facilmente
         </Title>
-        <Title size={15} margin={30}>
+        <SubTitle>
           Crie grupos para jogar sues games{'\n'}favoritos com seus amigos
-        </Title>
-        <ButtonIcon title="Entra com o Discord" />
+        </SubTitle>
+        <ButtonIcon title="Entra com o Discord" onPress={handleSignIn} />
       </Content>
     </Container>
   );

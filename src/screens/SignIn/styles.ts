@@ -1,14 +1,7 @@
 import { theme } from '../../global/styles/theme';
 import styled from 'styled-components/native';
 
-type ITitle = {
-  size: number;
-  margin: number;
-};
-
 export const Container = styled.View`
-  background-color: ${theme.colors.secondary90};
-
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -25,9 +18,19 @@ export const Content = styled.View`
   padding: 50px;
 `;
 
-export const Title = styled.Text<ITitle>`
+export const Title = styled.Text`
   color: ${theme.colors.heading};
   text-align: center;
-  font-size: ${({ size }) => size}px;
-  margin-bottom: ${({ margin }) => margin}px;
+  line-height: 40px;
+  font-size: 40px;
+  font-family: ${theme.fonts.title700};
+  margin-bottom: 16px;
+`;
+
+export const SubTitle = styled.Text`
+  color: ${theme.colors.heading};
+  text-align: center;
+  font-size: 15px;
+  font-family: ${theme.fonts.title500};
+  margin-bottom: 40px;
 `;
